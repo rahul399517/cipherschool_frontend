@@ -1,6 +1,5 @@
 import Nav from "react-bootstrap/Nav";
 import { Card } from "react-bootstrap/esm";
-import Button from "react-bootstrap/Button";
 import "./profilepage.css";
 import "./searchuser.css";
 import { useSelector } from "react-redux";
@@ -80,57 +79,7 @@ function SearchUser() {
        navigate("/home");
      }*/
   };
-  //  ..........................To show followers................................................
 
-  // for modal
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  //for retrieving data
-  const [followers, setFollowers] = useState([]);
-
-  const fetchFollowers = () => {
-    axios
-      .get(`${API_BASE_URL}/followers/${params.id}`)
-      .then((response) => {
-        setFollowers(response.data.followers);
-        console.log(response);
-        console.log(user._id);
-      })
-
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  useEffect(() => {
-    fetchFollowers();
-  }, []);
-  //  ..........................To show following................................................
-  const [showfollowing, setShowFollowing] = useState(false);
-
-  const handleCloseFollowing = () => setShowFollowing(false);
-  const handleShowFollowing = () => setShowFollowing(true);
-
-  //for retrieving data
-  const [following, setFollowing] = useState([]);
-
-  const fetchFollowing = () => {
-    axios
-      .get(`${API_BASE_URL}/following/${params.id}`)
-      .then((response) => {
-        setFollowing(response.data.following);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  useEffect(() => {
-    fetchFollowing();
-  }, []);
   return (
     <div>
       <div className="row">
@@ -219,85 +168,6 @@ function SearchUser() {
 
         {/* Below , Main components  if the profile page will be built  */}
         <div className="col-11">
-          {/* Top Profile pic and following devision */}
-          <div className="row">
-            <div className="col-12">
-              <Card
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  position: "fixed",
-                  top: "80px",
-                  left: "-2px",
-                  zIndex: "1",
-                }}
-              >
-                <Card.Body>
-                  <div className="row">
-                    <div className="col-sm-12 col-md-6">
-                      <span>
-                        <img
-                          className="shadow p-1"
-                          id="profileimg"
-                          src={user.profileImg}
-                          alt="prfile pic"
-                        />
-                      </span>
-                      <Card.Title id="greeting">
-                        Hello,{user.fullName}
-                      </Card.Title>
-                      <br></br>
-                      <Card.Subtitle className="mb-2 text-muted" id="email">
-                        {user.email}
-                      </Card.Subtitle>
-                    </div>
-                    <div className="col-sm-12 col-md-6">
-                      <div className="row">
-                        <div className="col-3"></div>
-                        <div className="col-9">
-                          <div className="row">
-                            <div className="col-6">
-                              {" "}
-                              <Button
-                                onClick={handleShow}
-                                className="form-control"
-                                style={{
-                                  border: " 1px  solid #F3912E",
-
-                                  backgroundColor: "white",
-                                  color: "#4169e1",
-                                  fontWeight: "700",
-                                }}
-                              >
-                                {user.followers?.length}
-                                <br></br>Followers
-                              </Button>
-                            </div>
-                            <div className="col-6">
-                              <Button
-                                onClick={handleShowFollowing}
-                                className="form-control"
-                                style={{
-                                  border: " 1px  solid #F3912E",
-                                  backgroundColor: "white",
-                                  color: "#4169e1",
-                                  fontWeight: "700",
-                                }}
-                              >
-                                {user.following?.length}
-                                <br></br>Following
-                              </Button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Card.Body>
-              </Card>
-            </div>
-          </div>
-
           {/* user details Devisions*/}
           <div className="row">
             <div className="col-md-1 col-sm-2"></div>
@@ -379,102 +249,6 @@ function SearchUser() {
           </div>
         </div>
       </div>
-      {/*   To Show Followers Modal  */}
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header style={{ border: "none" }} closeButton>
-          <Modal.Title>My Followers</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {followers.length === 0 ? (
-            <p>No followers found.</p>
-          ) : (
-            <ul>
-              {followers.map((follower) => (
-                <Card className="m-1 shadow  p-2" id="cardresult">
-                  <div className="row">
-                    <div className="col-2">
-                      <img
-                        style={{
-                          width: "40px",
-                          height: "40px",
-                          borderRadius: "100px",
-
-                          border: "3px solid white",
-                          float: "left",
-                        }}
-                        src={follower.profileImg}
-                        alt="profile pic"
-                      />
-                    </div>
-                    <div className="col-4" style={{ fontWeight: "600" }}>
-                      {follower.fullName}
-                    </div>
-                    <div className="col-6 ">
-                      <Button
-                        style={{
-                          width: "100%",
-                          backgroundColor: "white",
-                          color: "black",
-                        }}
-                      >
-                        {follower.email}
-                      </Button>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </ul>
-          )}
-        </Modal.Body>
-      </Modal>
-      {/*   To Show Followings Modal  */}
-      <Modal show={showfollowing} onHide={handleCloseFollowing}>
-        <Modal.Header style={{ border: "none" }} closeButton>
-          <Modal.Title>Followings</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {following?.length === 0 ? (
-            <p>No followers found.</p>
-          ) : (
-            <ul>
-              {following.map((following) => (
-                <Card className="m-1 shadow  p-2" id="cardresult">
-                  <div className="row">
-                    <div className="col-2">
-                      <img
-                        style={{
-                          width: "40px",
-                          height: "40px",
-                          borderRadius: "100px",
-
-                          border: "3px solid white",
-                          float: "left",
-                        }}
-                        src={following.profileImg}
-                        alt="profile pic"
-                      />
-                    </div>
-                    <div className="col-4" style={{ fontWeight: "600" }}>
-                      {following.fullName}
-                    </div>
-                    <div className="col-6 ">
-                      <Button
-                        style={{
-                          width: "100%",
-                          backgroundColor: "white",
-                          color: "black",
-                        }}
-                      >
-                        {following.email}
-                      </Button>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </ul>
-          )}
-        </Modal.Body>
-      </Modal>
     </div>
   );
 }
