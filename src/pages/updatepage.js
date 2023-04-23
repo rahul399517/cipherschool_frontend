@@ -213,6 +213,10 @@ function Updatepage() {
   //   const Tosearch = () => {
   //     navigate("/search");
   //   };
+    // to home
+  const tohome = () => {
+    navigate(`/home`);
+  };
   const toupdatepassword = () => {
     navigate(`/changepassword/${user._id}`);
     let timerInterval;
@@ -331,7 +335,7 @@ function Updatepage() {
                 id="sidenavbar"
               >
                 <Nav.Link
-                  href="/home"
+              onClick={()=>{tohome()}}
                   style={{ width: "60%", color: "black" }}
                   className="p-2"
                 >
