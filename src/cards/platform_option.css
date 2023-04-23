@@ -1,0 +1,57 @@
+#blurbutton {
+  width: 150px;
+  margin-left: 30px;
+  color: white;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.17);
+  border-radius: 1px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#blurbutton :hover {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#overlay {
+  width: 100%;
+  margin-top: 0px;
+  height: 100%;
+  /* From https://css.glass */
+  background: rgba(32, 30, 30, 0.47);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.7px);
+  -webkit-backdrop-filter: blur(0.7px);
+  border: 1px solid rgba(32, 30, 30, 0.3);
+}
+#subtitle {
+  margin-top: 222px;
+  font-weight: 600;
+  color: white;
+}
+#title {
+  font-size: 200%;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 1000px) {
+  #subtitle {
+    margin-top: 0px;
+    font-weight: 600;
+    color: white;
+  }
+  #title {
+    margin-top: 0px;
+    font-size: 200%;
+    font-weight: 700;
+    margin-top: -25px;
+  }
+}

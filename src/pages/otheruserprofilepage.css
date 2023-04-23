@@ -1,0 +1,30 @@
+#aboutme1 {
+  margin-top: 250px;
+  width: 100%;
+}
+#leftnavbar1 {
+  border: none;
+
+  margin-top: 250px;
+  display: flex;
+}
+
+/* #leftnavbar :active {
+    background-color: #f3912e;
+    color: black;
+  } */
+#leftnavbar1 :visited {
+  background-color: #f3912e;
+  color: black;
+}
+@media only screen and (max-width: 1000px) {
+  #aboutme1 {
+    margin-top: 300px;
+    width: 88%;
+    float: right;
+  }
+  #leftnavbar1 {
+    border: none;
+    margin-top: 10px;
+  }
+}

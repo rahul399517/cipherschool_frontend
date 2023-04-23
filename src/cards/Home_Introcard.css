@@ -1,0 +1,38 @@
+#introcard {
+  margin-top: 111px;
+  margin-left: 5px;
+  border: none;
+}
+#loginsignup {
+  height: 30px;
+  width: 50%;
+  border-radius: 11px;
+  font-weight: 500;
+  background-color: #f3912e;
+  border: none;
+}
+.custom-btn {
+  padding: 0.6rem;
+  border-radius: 4px;
+}
+.custom-btn-blue {
+  border: 1px solid #b3e0ff;
+  background-color: #b3e0ff;
+  color: white;
+}
+.custom-btn-white {
+  border: 1px solid #dee5e9;
+  background-color: #ffffff;
+  color: black;
+  padding: 10px;
+}
+@media only screen and (max-width: 1000px) {
+  #loginsignup {
+    height: 40px;
+    width: 90%;
+    border-radius: 11px;
+    font-weight: 500;
+    background-color: #f3912e;
+    border: none;
+  }
+}

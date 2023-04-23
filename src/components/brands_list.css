@@ -1,0 +1,8 @@
+#brandlist {
+  display: flex;
+}
+@media only screen and (max-width: 1000px) {
+  #brandlist {
+    display: none;
+  }
+}
