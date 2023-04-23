@@ -197,6 +197,10 @@ function UpdatePassword() {
   useEffect(() => {
     fetchFollowing();
   }, []);
+    // to home
+  const tohome = () => {
+    navigate(`/home`);
+  };
   return (
     <div>
       <div className="row">
@@ -217,7 +221,7 @@ function UpdatePassword() {
                 id="sidenavbar"
               >
                 <Nav.Link
-                  href="/home"
+                 onClick={()=>{tohome()}}
                   style={{ width: "60%", color: "black" }}
                   className="p-2"
                 >
