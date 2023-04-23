@@ -36,7 +36,7 @@ function Courses() {
                 </span>
                 <Card.Title>Shreya</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
-                  Instrutor
+                  Instructor
                 </Card.Subtitle>
               </Card.Body>
             </Card>
@@ -68,7 +68,7 @@ function Courses() {
                 </span>
                 <Card.Title>Rahul</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
-                  Instrutor
+                  Instructor
                 </Card.Subtitle>
               </Card.Body>
             </Card>
@@ -100,7 +100,7 @@ function Courses() {
                 </span>
                 <Card.Title>Abhishek</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
-                  Instrutor
+                  Instructor
                 </Card.Subtitle>
               </Card.Body>
             </Card>
@@ -132,7 +132,7 @@ function Courses() {
                 </span>
                 <Card.Title>Abhijeet</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
-                  Instrutor
+                  Instructor
                 </Card.Subtitle>
               </Card.Body>
             </Card>
