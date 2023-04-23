@@ -1,11 +1,12 @@
 #passform2 {
-  margin-top: 111px;
+  margin-top: 20px;
   width: 100%;
 }
 @media only screen and (max-width: 1000px) {
   #passform2 {
-    margin-top: 177px;
+    margin-top: 20px;
     width: 85%;
     float: right;
   }
 }
+
