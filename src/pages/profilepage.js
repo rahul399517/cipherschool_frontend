@@ -38,6 +38,10 @@ function Profilepage() {
   const toprofilepage = () => {
     navigate(`/profilepage/${user._id}`);
   };
+    // to home
+  const tohome = () => {
+    navigate(`/home`);
+  };
   //naviage to edit profile page
   const toupdatepage = () => {
     navigate(`/updatepage/${user._id}`);
@@ -177,7 +181,7 @@ function Profilepage() {
                 id="sidenavbar"
               >
                 <Nav.Link
-                  href="/home"
+                 onClick={()=>{tohome()}}
                   style={{ width: "60%", color: "black" }}
                   className="p-2"
                 >
