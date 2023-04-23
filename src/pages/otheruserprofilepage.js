@@ -14,6 +14,7 @@ import { API_BASE_URL } from "../config";
 import { useState } from "react";
 
 import "./changepasscode.css";
+import Graph from "./graph";
 function OtherUserProfilepage() {
   // Declaring Params
   const params = useParams();
@@ -402,24 +403,7 @@ function OtherUserProfilepage() {
                     CIPHER MAP
                   </Card.Title>
                   <Card.Title style={{ float: "right" }}></Card.Title>
-                  {/* about me text area */}
-                  <Card style={{ marginTop: "10px", width: "100%" }}>
-                    <div className="form-floating">
-                      <textarea
-                        // value={description}
-                        // onChange={(ev) => setDescription(ev.target.value)}
-                        className="form-control"
-                        placeholder="Leave a comment here"
-                        id="floatingTextarea"
-                        disabled
-                      ></textarea>
-                      <label for="floatingTextarea">
-                        {" "}
-                        <i className="fa-regular fa-newspaper"></i>Hey ,Add
-                        something about you .......
-                      </label>
-                    </div>
-                  </Card>
+                  <Graph />
                 </Card.Body>
               </Card>
 
