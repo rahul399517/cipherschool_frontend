@@ -14,6 +14,8 @@ import { useState } from "react";
 import { API_BASE_URL } from "../config";
 import Modal from "react-bootstrap/Modal";
 import { useParams } from "react-router-dom";
+import Graph from "./graph";
+
 function Profilepage() {
   //useparams
   const params = useParams();
@@ -362,21 +364,7 @@ function Profilepage() {
                   <Card.Title style={{ float: "right" }}></Card.Title>
                   {/* about me text area */}
                   <Card style={{ marginTop: "10px", width: "100%" }}>
-                    <div className="form-floating">
-                      <textarea
-                        // value={description}
-                        // onChange={(ev) => setDescription(ev.target.value)}
-                        className="form-control"
-                        placeholder="Leave a comment here"
-                        id="floatingTextarea"
-                        disabled
-                      ></textarea>
-                      <label for="floatingTextarea">
-                        {" "}
-                        <i className="fa-regular fa-newspaper"></i>Hey ,Add
-                        something about you .......
-                      </label>
-                    </div>
+                    <Graph />
                   </Card>
                 </Card.Body>
               </Card>
